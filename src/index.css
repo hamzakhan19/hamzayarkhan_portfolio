@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Professional Portfolio Design System for Hamza Yar Khan
+All colors MUST be HSL for consistency and theming support.
+*/
+
+@layer base {
+  :root {
+    /* Primary Brand Colors - Professional Blues */
+    --primary: 214 95% 50%;        /* Vibrant blue #0EA5E9 */
+    --primary-foreground: 0 0% 98%; /* Almost white text */
+    --primary-hover: 214 95% 45%;   /* Darker blue on hover */
+    
+    /* Secondary Colors - Tech Purple Accent */
+    --secondary: 262 83% 58%;       /* Purple #8B5CF6 */
+    --secondary-foreground: 0 0% 98%;
+    --secondary-hover: 262 83% 53%;
+    
+    /* Neutral Palette */
+    --background: 0 0% 100%;        /* Pure white */
+    --foreground: 222 15% 15%;      /* Dark gray text */
+    
+    --card: 0 0% 100%;
+    --card-foreground: 222 15% 15%;
+    
+    /* Muted Colors for Subtle Elements */
+    --muted: 220 13% 96%;           /* Light gray */
+    --muted-foreground: 220 9% 55%; /* Medium gray */
+    
+    /* Accent Colors */
+    --accent: 214 95% 95%;          /* Very light blue */
+    --accent-foreground: 214 95% 20%;
+    
+    /* Functional Colors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --success: 142 71% 45%;         /* Green for success states */
+    --success-foreground: 0 0% 98%;
+    
+    --warning: 38 92% 50%;          /* Orange for warnings */
+    --warning-foreground: 0 0% 98%;
+    
+    /* UI Elements */
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 214 95% 50%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(214 95% 50%), hsl(262 83% 58%));
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%), hsl(220 13% 98%));
+    --gradient-hero: linear-gradient(135deg, hsl(214 95% 50% / 0.1), hsl(262 83% 58% / 0.1));
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(220 13% 69% / 0.15);
+    --shadow-md: 0 4px 6px -1px hsl(220 13% 69% / 0.15), 0 2px 4px -1px hsl(220 13% 69% / 0.1);
+    --shadow-lg: 0 10px 15px -3px hsl(220 13% 69% / 0.15), 0 4px 6px -2px hsl(220 13% 69% / 0.1);
+    --shadow-glow: 0 0 40px hsl(214 95% 50% / 0.3);
+    
+    /* Spacing & Layout */
+    --radius: 0.75rem;
+    --section-padding: 5rem;
+    --container-padding: 2rem;
+    
+    /* Typography */
+    --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    
+    /* Animations */
+    --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark Theme - Professional & Modern */
+    --background: 222 15% 8%;          /* Dark navy */
+    --foreground: 0 0% 95%;            /* Light text */
+    
+    --card: 222 15% 10%;
+    --card-foreground: 0 0% 95%;
+    
+    /* Keep brand colors consistent in dark mode */
+    --primary: 214 95% 55%;            /* Slightly lighter blue */
+    --primary-foreground: 0 0% 98%;
+    --primary-hover: 214 95% 50%;
+    
+    --secondary: 262 83% 63%;          /* Slightly lighter purple */
+    --secondary-foreground: 0 0% 98%;
+    --secondary-hover: 262 83% 58%;
+    
+    --muted: 222 15% 15%;              /* Dark gray */
+    --muted-foreground: 220 9% 65%;    /* Medium gray */
+    
+    --accent: 214 95% 15%;             /* Dark blue accent */
+    --accent-foreground: 214 95% 85%;
+    
+    --destructive: 0 84% 65%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --success: 142 71% 50%;
+    --success-foreground: 0 0% 98%;
+    
+    --warning: 38 92% 55%;
+    --warning-foreground: 0 0% 98%;
+    
+    --border: 222 15% 20%;
+    --input: 222 15% 15%;
+    --ring: 214 95% 55%;
+    
+    /* Dark mode gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(214 95% 55%), hsl(262 83% 63%));
+    --gradient-subtle: linear-gradient(180deg, hsl(222 15% 8%), hsl(222 15% 12%));
+    --gradient-hero: linear-gradient(135deg, hsl(214 95% 55% / 0.15), hsl(262 83% 63% / 0.15));
+    
+    /* Dark shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(222 15% 0% / 0.3);
+    --shadow-md: 0 4px 6px -1px hsl(222 15% 0% / 0.3), 0 2px 4px -1px hsl(222 15% 0% / 0.2);
+    --shadow-lg: 0 10px 15px -3px hsl(222 15% 0% / 0.3), 0 4px 6px -2px hsl(222 15% 0% / 0.2);
+    --shadow-glow: 0 0 40px hsl(214 95% 55% / 0.4);
+  }
+}
+
+@layer components {
+  /* Component Styles using Design System */
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+  
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .glass-effect {
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid hsl(var(--border) / 0.5);
+    background: hsl(var(--background) / 0.8);
+  }
+  
+  .section-container {
+    padding: var(--section-padding) var(--container-padding);
+  }
+  
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out forwards;
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  
+  .animate-delay-1 { animation-delay: 0.1s; }
+  .animate-delay-2 { animation-delay: 0.2s; }
+  .animate-delay-3 { animation-delay: 0.3s; }
+  .animate-delay-4 { animation-delay: 0.4s; }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px hsl(var(--primary) / 0.5);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-[var(--font-body)];
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    scroll-behavior: smooth;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
